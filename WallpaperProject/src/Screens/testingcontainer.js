@@ -120,14 +120,14 @@ const TestContainer = ({navigation, route}) => {
     };
     config(options)
       .fetch('GET', image_URL)
-      .then((res) => {
+      .then(res => {
         refRBSheet.current.close();
         // Showing alert after successful downloading
         console.log('res -> ', JSON.stringify(res));
 
         Snackbar.show({
           text: 'Image Downloaded Successfully.',
-          duration: Snackbar.LENGTH_SHORT,
+          duration: Snackbar.LENGTH_LONG,
         });
       });
   };
@@ -314,15 +314,14 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: '100%',
-    height: deviceHeight * 0.9007,
+    height: deviceHeight,
     justifyContent: 'flex-end',
-    // marginBottom: 55,
     alignItems: 'center',
   },
   maincontainer: {
     width: deviceWidth,
     height: deviceHeight,
-    marginTop: 38.8,
+
   },
 });
 export default TestContainer;
